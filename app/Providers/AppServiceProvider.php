@@ -43,6 +43,13 @@ class AppServiceProvider extends ServiceProvider
             $user->userCategory === 'staff' || 
             $user->userCategory === 'academician';
         });
+        Gate::define('adminStaffLeader', function ($user) {
+            return $user->userCategory === 'admin' || $user->userCategory === 'staff' || 
+                   Grant::whereHas('academicians', function ($query) use ($user) {
+                       $query->where('user_id', $user->id)
+                             ->where('role', 'leader');
+                   })->exists();
+        });
 
         /* Corrected Gate definition for "viewGrants"
         Gate::define('viewGrants', function ($user) {

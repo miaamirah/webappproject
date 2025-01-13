@@ -2,6 +2,7 @@
 @section('content')
 <div class="page-body">
     <div class="container-xl">
+      
         <style>
           .chart-title {
             font-family: Cambria, serif; 
@@ -50,6 +51,7 @@
 
         <div class="page-body">
             <div class="container-xl">
+              
             <div class="chart-section text-center">
             <!-- Title for the Chart -->
             <h1 class="chart-title"><b>GRANT MANAGEMENT SYSTEM PIE CHART</b></h1>

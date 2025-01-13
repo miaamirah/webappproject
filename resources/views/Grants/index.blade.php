@@ -4,6 +4,16 @@
 <div class="container">
 <div style="background: #f3e8f7; min-height: 200vh; padding: 0px;">
     <div class="container" style="background: white; padding: 20px; border-radius: 10px;">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Grants</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="text-center text-dark"><b>List of Grants</b></h1>
         @can('isAdmin',App\Models\User::class)
@@ -49,17 +59,18 @@
 
                         <a href="{{ route('grants.show', $grant->id) }}" class="btn btn-info btn-sm" style="margin-right: 5px;">View</a> 
         
-                        @can('staffAdmin', App\Models\User::class)
+                        @can('adminStaffLeader', App\Models\User::class)
 
                                     <!-- Edit Button -->
                                     <a href="{{ route('grants.edit', $grant->id) }}" class="btn btn-primary btn-sm" style="margin-right: 5px;">Edit</a>
-
+                        @can('isAdmin', App\Models\User::class)
                                     <!-- Delete Button with confirmation -->
                                     <form action="{{ route('grants.destroy', $grant->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" style="display: inline-block;">Delete</button>
                                     </form>
+                        @endcan
             @endcan
                                     <!-- View Milestones Link -->
                                     <!--a href="{{ route('milestones.index', $grant->id) }}" class="btn btn-info btn-sm me-2">ViewMilestones</a-->

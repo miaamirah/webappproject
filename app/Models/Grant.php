@@ -47,7 +47,6 @@ class Grant extends Model
     }
 }
 
-
 /*namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

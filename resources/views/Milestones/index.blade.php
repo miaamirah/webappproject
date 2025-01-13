@@ -2,8 +2,16 @@
 
 @section('content')
 <div class="container">
-<div style="background: #f3e8f7; min-height: 200vh; padding: 0px;">
-<div class="container" style="background: white; padding: 20px; border-radius: 10px;">
+<div style="background: #f3e8f7; min-height: 200vh; padding: 10px;">
+<div class="container" style="background: white; padding: 20px; border-radius: 20px;">
+<div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Milestones</li>
+          </ol>
+        </nav>
     <h1 class="fw-bold text-dark">List of Milestones</h1>
     @can('isLeader', $grant)
         <div class="d-flex justify-content-end">

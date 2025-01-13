@@ -3,6 +3,16 @@
 @section('content')
 <div style="background: #f3e8f7; min-height: 200vh; padding: 0px;">
     <div class="container" style="background: white; padding: 20px; border-radius: 10px;">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Academicians</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="fw-bold text-dark"><strong>List of Academicians</strong></h1>
             @can('isAdmin', App\Models\User::class)   

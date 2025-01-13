@@ -56,9 +56,10 @@
 			</div>
 		</div>
 
-        <!--Footer-->
-        @include('includes.footer')
+        
       </div>
+	  <!--Footer-->
+	  @include('includes.footer')
     </div>
 
     <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
