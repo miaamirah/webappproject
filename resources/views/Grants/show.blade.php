@@ -6,7 +6,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3>{{ $grant->title }}</h3>
+            <h3>Project title: {{ $grant->title }}</h3>
         </div>
         <div class="card-body">
             <p><strong>Project Description:</strong> {{ $grant->project_description }}</p>
@@ -31,14 +31,14 @@
             <h5 class="mt-4">Milestones</h5>
             @if ($milestones->isNotEmpty())
                 <table class="table table-bordered mt-3">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Milestone Name</th>
-                            <th>Target Completion Date</th>
-                            <th>Deliverable</th>
-                            <th>Status</th>
-                            <th>Remarks</th>
+                <thead>                         
+                    <tr>
+                            <th style="background: rgb(198, 198, 198); color: #000;">No</th>
+                            <th style="background: rgb(198, 198, 198); color: #000;">Milestone Name</th>
+                            <th style="background: rgb(198, 198, 198); color: #000;">Target Completion Date</th>
+                            <th style="background: rgb(198, 198, 198); color: #000;">Deliverable</th>
+                            <th style="background: rgb(198, 198, 198); color: #000;">Status</th>
+                            <th style="background: rgb(198, 198, 198); color: #000;">Remarks</th>
                         </tr>
                     </thead>
                     <tbody>

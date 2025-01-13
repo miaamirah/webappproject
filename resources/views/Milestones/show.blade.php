@@ -6,7 +6,8 @@
 
     <div class="card">
         <div class="card-header">
-            <h5><b>Milestone title: {{ $milestone->milestone_title }}</b></h5>
+            <b>Milestone title: </b>
+            {{ $milestone->milestone_title }}
         </div>
         <div class="card-body">
             <p><strong>Grant:</strong> {{ $milestone->grant->title ?? 'No Grant Assigned' }}</p>

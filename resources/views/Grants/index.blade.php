@@ -2,8 +2,10 @@
 
 @section('content')
 <div class="container">
+<div style="background: #f3e8f7; min-height: 200vh; padding: 0px;">
+    <div class="container" style="background: white; padding: 20px; border-radius: 10px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="fw-bold text-dark"><b>Grants</b></h1>
+        <h1 class="text-center text-dark"><b>List of Grants</b></h1>
         @can('isAdmin',App\Models\User::class)
             <a href="{{ route('grants.create') }}" class="btn btn-success">Add Grant</a>
         @endcan
@@ -18,16 +20,16 @@
     <table class="table table-bordered border-dark">
         <thead>
             <tr class="text-center">
-                <th>No</th>
-                <th>Title</th>
-                <th>Project Description</th>
-                <th>Grant Amount</th>
-                <th>Provider</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Duration</th>
-                <th>Project Leader</th>
-                <th>Actions</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">No</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Title</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Project Description</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Grant Amount</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Provider</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Start Date</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">End Date</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Duration</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Project Leader</th>
+                <th style="background: rgb(215, 182, 218); color: #000;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -44,10 +46,13 @@
                     <td>{{ $grant->leader?->name ?? 'No Leader Assigned' }}</td> <!-- Access leader relationship -->
                     <td>
                     <div class="d-inline-flex align-items-center">
-                        <a href="{{ route('grants.show', $grant->id) }}" class="btn btn-info btn-sm">View</a> 
-                        @can('staffAdmin', App\Models\User::class)
+
+                        <a href="{{ route('grants.show', $grant->id) }}" class="btn btn-info btn-sm" style="margin-right: 5px;">View</a> 
+        
+                        @can('isAdmin', App\Models\User::class)
+
                                     <!-- Edit Button -->
-                                    <a href="{{ route('grants.edit', $grant->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="{{ route('grants.edit', $grant->id) }}" class="btn btn-primary btn-sm" style="margin-right: 5px;">Edit</a>
 
                                     <!-- Delete Button with confirmation -->
                                     <form action="{{ route('grants.destroy', $grant->id) }}" method="POST" style="display:inline;">
@@ -55,11 +60,10 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" style="display: inline-block;">Delete</button>
                                     </form>
-
+            @endcan
                                     <!-- View Milestones Link -->
                                     <!--a href="{{ route('milestones.index', $grant->id) }}" class="btn btn-info btn-sm me-2">ViewMilestones</a-->
-                                    @endcan
-                    </div>
+                                 
                         <!--@can('isAdmin')
                         <a href="{{ route('grants.edit', $grant->id) }}" class="btn btn-primary btn-sm">Edit</a>
                         <form action="{{ route('grants.destroy', $grant->id) }}" method="POST" style="display: inline-block;">

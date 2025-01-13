@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container">
-    <h1 class="fw-bold text-dark">Milestones</h1>
+<div style="background: #f3e8f7; min-height: 200vh; padding: 0px;">
+<div class="container" style="background: white; padding: 20px; border-radius: 10px;">
+    <h1 class="fw-bold text-dark">List of Milestones</h1>
     @can('isLeader', $grant)
         <div class="d-flex justify-content-end">
             <a href="{{ route('milestones.create') }}" class="btn btn-success mb-4">Add Milestone</a>
@@ -16,15 +18,15 @@
     <table class="table table-bordered border-dark">
         <thead>
             <tr class="text-center">
-                <th>No</th>
-                <th>Milestone Title</th>
-                <th>Completion Date</th>
-                <th>Deliverable</th>
-                <th>Status</th>
-                <th>Grant Title</th>
-                <th>Remarks</th>
-                <th>Date Updated</th>
-                <th>Actions</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">No</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Milestone Title</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Completion Date</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Deliverable</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Status</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Grant Title</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Remarks</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Date Updated</th>
+                <th  style="background: rgb(215, 182, 218); color: #000;">Actions</th>
             </tr>
         </thead>
         <tbody>

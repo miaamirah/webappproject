@@ -32,6 +32,7 @@
       	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
       }
       body {
+		background: #f3e8f7;
       	font-feature-settings: "cv03", "cv04", "cv11";
       }
     </style>

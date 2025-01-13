@@ -17,22 +17,29 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
+        /* Full height layout using Flexbox */
+        html, body {
+            height: 100%; /* Ensure the height covers the entire viewport */
             margin: 0;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(135deg, #d1e8ff, #f8f9fa); /* Light blue gradient fading into white */
+            background: linear-gradient(135deg, rgb(236, 245, 254), rgb(224, 175, 230)); /* Light blue gradient */
+            font-family: 'Nunito', sans-serif;
+        }
+
+        #app {
+            flex: 1; /* Allows the main content to take up remaining space */
+            display: flex;
+            flex-direction: column;
         }
 
         .navbar {
             background-color: #fff;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
         .navbar-brand {
-            color: #007bff;
+            color: #000;
             font-weight: bold;
         }
 
@@ -45,36 +52,25 @@
         }
 
         .nav-link:hover {
-            color: #0056b3; /* Hover effect */
-        }
-
-        .dropdown-menu {
-            background-color: #fff;
-        }
-
-        .dropdown-item {
-            color: #6c757d;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f8f9fa;
-            color: #007bff; /* Hover effect for dropdown items */
+            color: #0056b3;
         }
 
         main {
-            flex: 1; /* Ensures the main content takes available space */
+            flex: 1; /* Expands to fill available space */
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        footer {
+        .footer {
             text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            color: #6c757d;
-            border-top: 1px solid #e9ecef;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 0;
+            color: #333;
+            font-size: 14px;
+            border-top: 1px solid #ccc;
+           
         }
     </style>
 </head>
@@ -96,7 +92,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -137,11 +132,11 @@
         <main>
             @yield('content')
         </main>
-
-        <!-- Footer -->
-        <footer>
-            &copy; {{ date('Y') }} Research Grant Management System. All Rights Reserved.
-        </footer>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; {{ date('Y') }} Research Grant Management System. All Rights Reserved.
+    </footer>
 </body>
 </html>

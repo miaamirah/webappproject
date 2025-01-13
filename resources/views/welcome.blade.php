@@ -16,32 +16,35 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #e3f2fd, #90caf9);
+            background: linear-gradient(135deg, #e3f2fd, rgb(224, 175, 230));
             color: #333;
         }
         .container {
-            text-align: center;
-            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .left-section .right-section {
+            flex: 1;
+            text-align: center;
+        }
+        .left-section img {
+            max-width: 50%; /* Adjust logo size */
+            height: auto;
         }
         .title {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #0056b3;
-        }
-        img {
-            max-width: 30%;
-            height: auto;
-            margin-bottom: 20px;
+            color:rgb(0, 0, 0);
         }
         .button-group {
             display: flex;
-            justify-content: center;
+            align-items: center;
             gap: 15px;
-            margin-top: 20px;
         }
         .btn {
             display: inline-block;
@@ -67,24 +70,26 @@
 </head>
 <body>
     <div class="container">
-        <!-- Title -->
-        <div class="title">Research Grant Management System</div>
+        <!-- Left Section -->
+        <div class="left-section">
+            <img src="/static/uniten_logo.svg" alt="Universiti Tenaga Nasional">
+        </div>
 
-        <!-- Image -->
-        <img src="/static/uniten_logo.svg" alt="Universiti Tenaga Nasional">
-
-        <!-- Buttons -->
-        <div class="button-group">
-            @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="btn">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}" class="btn">Log in</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn btn-register">Register</a>
-                    @endif
-                @endauth
-            @endif
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="title">Research Grant Management System</div>
+            <div class="button-group">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="btn">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="btn">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-register">Register</a>
+                        @endif
+                    @endauth
+                @endif
+            </div>
         </div>
     </div>
 </body>
