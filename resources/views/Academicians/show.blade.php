@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.index_template')
 
 @section('content')
 <div class="container">
@@ -11,7 +11,7 @@
         <div class="card-body">
             <p><strong>Staff Number:</strong> {{ $academician->staff_number }}</p>
             <p><strong>Email:</strong> {{ $academician->email }}</p>
-            <p><strong>College:</strong> {{ $academician->college }}</p>
+            <p><strong>College UNITEN:</strong> {{ $academician->college }}</p>
             <p><strong>Department:</strong> {{ $academician->department }}</p>
             <p><strong>Position:</strong> {{ $academician->position }}</p>
         </div>
