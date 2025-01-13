@@ -49,7 +49,7 @@
 
                         <a href="{{ route('grants.show', $grant->id) }}" class="btn btn-info btn-sm" style="margin-right: 5px;">View</a> 
         
-                        @can('isAdmin', App\Models\User::class)
+                        @can('staffAdmin', App\Models\User::class)
 
                                     <!-- Edit Button -->
                                     <a href="{{ route('grants.edit', $grant->id) }}" class="btn btn-primary btn-sm" style="margin-right: 5px;">Edit</a>
