@@ -15,13 +15,76 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #d1e8ff, #f8f9fa); /* Light blue gradient fading into white */
+        }
+
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .navbar-brand {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover {
+            color: #0056b3;
+        }
+
+        .nav-link {
+            color: #6c757d;
+        }
+
+        .nav-link:hover {
+            color: #0056b3; /* Hover effect */
+        }
+
+        .dropdown-menu {
+            background-color: #fff;
+        }
+
+        .dropdown-item {
+            color: #6c757d;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #007bff; /* Hover effect for dropdown items */
+        }
+
+        main {
+            flex: 1; /* Ensures the main content takes available space */
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Research Grant Management System
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -29,9 +92,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
+                    <ul class="navbar-nav me-auto"></ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -72,9 +133,15 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <!-- Main Content -->
+        <main>
             @yield('content')
         </main>
+
+        <!-- Footer -->
+        <footer>
+            &copy; {{ date('Y') }} Research Grant Management System. All Rights Reserved.
+        </footer>
     </div>
 </body>
 </html>

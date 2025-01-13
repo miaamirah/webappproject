@@ -1,14 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\AcademicianController;
 use App\Http\Controllers\GrantController;
 use App\Http\Controllers\MilestoneController;
+use App\Http\Controllers\DashboardController;
 
 // Home Routes
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login'); // Redirect to the login page after logout
+})->name('logout');
+
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Auth::routes();
 
